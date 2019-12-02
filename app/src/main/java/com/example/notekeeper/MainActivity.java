@@ -11,7 +11,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +34,18 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        Spinner spinnerCourses = (Spinner) findViewById(R.id.spinner_courses);
+        Spinner spinnerCourses = (Spinner) findViewById(R.id.spinner);
+
+        List<CourseInfo> listCourses = DataManager.getInstance().getCourses();
+
+        //creating the selected item
+        ArrayAdapter<CourseInfo> adapterCourses = new ArrayAdapter<CourseInfo>(this,android.R.layout.simple_spinner_item,listCourses);
+
+        //creating the drop down layout
+        adapterCourses.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //binding the spinner with the adapter
+        spinnerCourses.setAdapter(adapterCourses);
     }
 
     @Override

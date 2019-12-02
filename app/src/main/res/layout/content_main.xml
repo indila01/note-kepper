@@ -11,7 +11,7 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="0"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -35,7 +35,7 @@
 
     <EditText
         android:id="@+id/text_note_text"
-        android:layout_width="0"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
